@@ -1,6 +1,7 @@
 ### Dockerfile for splunk
+### Originally from dmaxwell351/docker-containers
 FROM phusion/baseimage:0.9.16
-MAINTAINER dmaxwell351 <dmaxwell351@sent.com>
+label maintainer="jtok"
 
 ENV HOME /root
 ENV SPLUNK_HOME=/opt/splunk
