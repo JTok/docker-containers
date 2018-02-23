@@ -17,3 +17,4 @@ Once the container is running, browse to: `http://<host>:8000` to complete the s
 * `/license` For loading an enterprise license in the app.
 
 All three volumes are optional, but to have a persistent install, you should map /opt/splunk/var.
+## This docker originally created at dmaxwell351/docker-containers
