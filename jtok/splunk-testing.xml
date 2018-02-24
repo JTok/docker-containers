@@ -28,7 +28,7 @@
 	- Updated splunk to v7.0.2
   </Changes>
   <Registry>https://registry.hub.docker.com/u/jtok/splunk/</Registry>
-  <Repository>jtok/splunk:testing</Repository>
+  <Repository>jtok/splunk#testing</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
