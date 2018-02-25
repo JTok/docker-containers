@@ -30,7 +30,7 @@ ENV LANG en_US.utf8
 RUN apt-get update && apt-get install -y libgssapi-krb5-2 && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update -q && \
-	apt-get install -y wget
+	apt-get install -y wget && rm -rf /var/lib/apt/lists/*
 
 RUN wget -O splunk-7.0.2-03bbabbd5c0f-linux-2.6-amd64.deb "https://www.splunk.com/bin/splunk/DownloadActivityServlet?architecture=x86_64&platform=linux&version=7.0.2&product=splunk&filename=splunk-7.0.2-03bbabbd5c0f-linux-2.6-amd64.deb&wget=true"
 
@@ -43,11 +43,12 @@ RUN chmod a+x /etc/rc.local && \
 
 RUN printf "\nOPTIMISTIC_ABOUT_FILE_LOCKING = 1\n" >> $SPLUNK_HOME/etc/splunk-launch.conf
 
-EXPOSE 8000 8089 9997 514
+#EXPOSE 8000 8089 9997 514
+EXPOSE 8000/tcp 8089/tcp 9997/tcp 514/udp
 
-VOLUME ["/opt/splunk", "/data", "/license"]
+VOLUME ["/opt/splunk/var", "/opt/splunk/etc", "/data", "/license"]
 
 ### END
-### To make this a persistent container, you must map /opt/splunk/var of this container
+### To make this a persistent container, you must map /opt/splunk/var and /opt/splunk/etc of this container
 ### to a folder on your host machine.
 ###
