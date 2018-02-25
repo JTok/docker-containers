@@ -4,16 +4,6 @@
 
 set -e
 
-
-# Set optimistic file locking in main location
-if ! grep -iq "OPTIMISTIC_ABOUT_FILE_LOCKING = 1" ${SPLUNK_HOME}/etc/splunk-launch.conf; then
-  printf "\nOPTIMISTIC_ABOUT_FILE_LOCKING = 1\n" >> ${SPLUNK_HOME}/etc/splunk-launch.conf
-fi
-# Set optimistic file locking in backup location
-if ! grep -iq "OPTIMISTIC_ABOUT_FILE_LOCKING = 1" /var/opt/splunk/etc/splunk-launch.conf; then
-  printf "\nOPTIMISTIC_ABOUT_FILE_LOCKING = 1\n" >> /var/opt/splunk/etc/splunk-launch.conf
-fi
-
 if [ "$1" = 'splunk' ]; then
   shift
   sudo -HEu ${SPLUNK_USER} ${SPLUNK_HOME}/bin/splunk "$@"
