@@ -59,13 +59,8 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/splunk/var</HostDir>
+      <HostDir>/mnt/user/appdata/splunk</HostDir>
       <ContainerDir>/opt/splunk/var</ContainerDir>
-      <Mode>rw</Mode>
-    </Volume>
-    <Volume>
-      <HostDir>/mnt/user/appdata/splunk/etc</HostDir>
-      <ContainerDir>/opt/splunk/etc</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
