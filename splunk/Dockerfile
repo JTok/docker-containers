@@ -1,20 +1,20 @@
 ### Dockerfile for splunk
 ### Originally from dmaxwell351/docker-containers
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.10.0
 label maintainer="jtok"
 
 ENV HOME /root
 ENV SPLUNK_HOME=/opt/splunk
-ENV DEBIAN_FRONTEND noninteractive
-ENV LC_ALL C.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8
+ENV DEBIAN_FRONTEND=noninteractive
+ENV LC_ALL=C.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US.UTF-8
 
 ENV SPLUNK_PRODUCT splunk
 ENV SPLUNK_VERSION 7.0.2
 ENV SPLUNK_BUILD 03bbabbd5c0f
-ENV SPLUNK_FILENAME splunk-${SPLUNK_VERSION}-${SPLUNK_BUILD}-Linux-x86_64.tgz
-ENV SPLUNK_BACKUP_DEFAULT_ETC /var/opt/splunk
+ENV SPLUNK_FILENAME splunk-$SPLUNK_VERSION-$SPLUNK_BUILD-Linux-x86_64.tgz
+ENV SPLUNK_BACKUP_DEFAULT_ETC=/var/opt/splunk
 
 CMD ["/sbin/my_init"]
 
