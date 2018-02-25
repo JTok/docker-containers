@@ -64,6 +64,11 @@
       <Mode>rw</Mode>
     </Volume>
     <Volume>
+      <HostDir>/mnt/user/appdata/splunk/etc</HostDir>
+      <ContainerDir>/opt/splunk/etc</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
       <HostDir>/var/log</HostDir>
       <ContainerDir>/data</ContainerDir>
       <Mode>ro</Mode>
