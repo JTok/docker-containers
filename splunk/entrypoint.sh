@@ -145,6 +145,12 @@ EOF
       fi
     done
   fi
+  
+  # Set optimistic file locking
+  if ! grep -i "OPTIMISTIC_ABOUT_FILE_LOCKING = 1" $SPLUNK_HOME/etc/splunk-launch.conf
+  then
+    printf "\nOPTIMISTIC_ABOUT_FILE_LOCKING = 1\n" >> $SPLUNK_HOME/etc/splunk-launch.conf
+  fi
 
   sudo -HEu ${SPLUNK_USER} tail -n 0 -f ${SPLUNK_HOME}/var/log/splunk/splunkd_stderr.log &
   wait
