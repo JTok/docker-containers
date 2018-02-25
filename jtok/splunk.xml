@@ -80,7 +80,7 @@
   </Data>
   <Version>7.0.2</Version>
   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
-  <ExtraParameters>-e "SPLUNK_START_ARGS=--accept-license"</ExtraParameters>
+  <Extra Parameters>-e "SPLUNK_START_ARGS=--accept-license --answer-yes"</Extra Parameters>
   <Banner>http://i.imgur.com/eddJlVg.png</Banner>
   <Icon>http://i.imgur.com/KKoQMo6.png</Icon>
 </Container>
