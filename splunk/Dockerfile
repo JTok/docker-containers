@@ -63,6 +63,7 @@ COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod +x /sbin/entrypoint.sh
 
 RUN printf "\nOPTIMISTIC_ABOUT_FILE_LOCKING = 1\n" >> $SPLUNK_HOME/etc/splunk-launch.conf
+RUN printf "\nOPTIMISTIC_ABOUT_FILE_LOCKING = 1\n" >> $SPLUNK_BACKUP_DEFAULT_ETC/etc/splunk-launch.conf
 
 #EXPOSE 8000 8089 9997 514
 EXPOSE 8000/tcp 8089/tcp 9997/tcp 514/udp
