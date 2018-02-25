@@ -38,6 +38,12 @@ RUN apt-get update -q \
   && apt-get install -y libgssapi-krb5-2 \
   && rm -rf /var/lib/apt/lists/*
 
+# sudo dependency
+RUN apt-get update -q \
+  && apt-get install -y sudo \
+  && usermod -aG sudo username
+  && rm -rf /var/lib/apt/lists/*
+
 RUN apt-get update -q \
   && apt-get install -y wget
 
