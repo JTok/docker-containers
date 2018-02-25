@@ -7,11 +7,15 @@
   <Date>23/02/2018</Date>
   <Name>splunk</Name>
   <Description>
-    [h3]splunk[/h3] Splunk captures, indexes, and correlates real-time data in a searchable repository from which it can generate graphs, reports, alerts, dashboards, and visualizations. Try it as your remote syslog server![br][br]
+    [h3]splunk[/h3]
+    Splunk captures, indexes, and correlates real-time data in a searchable repository from which it can generate graphs, reports, alerts, dashboards, and visualizations. Try it as your remote syslog server![br][br]
+    [h2][span style=\'color: #E80000;\']IMPORTANT:[/span][/h2][br]
+    [b]-e "SPLUNK_START_ARGS=--accept-license --answer-yes"[/b] - MUST be added to the Extra Parameters box after turning on Advanced View or the container will not start.[br][br]
     [b][span style=\'color: #E80000;\']Directions:[/span][/b][br]
-    [b]/opt/splunk/var[/b] : this path is where splunk will store it\'s configuration files and databases.[br]
-    [b]/data[/b] : if mapped, this path can be added to splunk to monitor the host (i.e. /var/log).[br]
-	[b]/license[/b] : if mapped, this path should hold the license file if wanting to use splunk enterprise.[br]
+    [b]/opt/splunk/var[/b] : this path is where splunk will store it\'s databases.[br]
+    [b]/opt/splunk/etc[/b] : this path is where splunk will store it\'s config files.[br]
+    [b]/data[/b] : this path is added so splunk will monitor the host (i.e. /var/log).[br]
+    [b]/license[/b] : if mapped, this path should hold the license file if wanting to use splunk enterprise.[br]
   </Description>
   <Changes>
   	[center][font size=5]splunk Change Log[/font][/center]
@@ -80,7 +84,7 @@
   </Data>
   <Version>7.0.2</Version>
   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
-  <Extra Parameters>-e "SPLUNK_START_ARGS=--accept-license --answer-yes"</Extra Parameters>
+  <ExtraParameters>-e "SPLUNK_START_ARGS=--accept-license --answer-yes"</ExtraParameters>
   <Banner>http://i.imgur.com/eddJlVg.png</Banner>
   <Icon>http://i.imgur.com/KKoQMo6.png</Icon>
 </Container>
