@@ -61,6 +61,13 @@ RUN mkdir -p ${SPLUNK_HOME} \
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod +x /sbin/entrypoint.sh
 
+#Update local files
+COPY updatefiles.sh /opt/updatefiles.sh
+RUN chmod a+x /opt/updatefiles.sh
+
+WORKDIR /opt
+./updatefiles.sh
+
 
 EXPOSE 8000/tcp 8089/tcp 9997/tcp 514/udp
 
