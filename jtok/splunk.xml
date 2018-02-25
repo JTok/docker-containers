@@ -36,31 +36,40 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
+        <Description>Web UI</Description>
         <HostPort>8000</HostPort>
         <ContainerPort>8000</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
-	  <Port>
-        <HostPort>8089</HostPort>
-        <ContainerPort>8089</ContainerPort>
-        <Protocol>tcp</Protocol>
+  	  <Port>
+          <Description>Daemon</Description>
+          <HostPort>8089</HostPort>
+          <ContainerPort>8089</ContainerPort>
+          <Protocol>tcp</Protocol>
       </Port>
-	  <Port>
+  	  <Port>
+        <Description>Indexing</Description>
         <HostPort>9997</HostPort>
         <ContainerPort>9997</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
-	  <Port>
-        <HostPort>514</HostPort>
-        <ContainerPort>514</ContainerPort>
-        <Protocol>udp</Protocol>
+  	  <Port>
+          <Description>Syslog</Description>
+          <HostPort>514</HostPort>
+          <ContainerPort>514</ContainerPort>
+          <Protocol>udp</Protocol>
       </Port>
     </Publish>
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/splunk</HostDir>
-      <ContainerDir>/opt/splunk</ContainerDir>
+      <HostDir>/mnt/user/appdata/splunk/var</HostDir>
+      <ContainerDir>/opt/splunk/var</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/splunk/etc</HostDir>
+      <ContainerDir>/opt/splunk/etc</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
