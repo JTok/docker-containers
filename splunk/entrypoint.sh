@@ -17,7 +17,7 @@ elif [ "$1" = 'start-service' ]; then
     __configured=true
   fi
 
-  __license_ok=false
+  __license_ok=true
   # If these files are different override etc folder (possible that this is upgrade or first start cases)
   # Also override ownership of these files to splunk:splunk
   if ! $(cmp --silent /var/opt/splunk/etc/splunk.version ${SPLUNK_HOME}/etc/splunk.version); then
