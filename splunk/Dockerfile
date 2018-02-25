@@ -62,8 +62,8 @@ COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod +x /sbin/entrypoint.sh
 
 #Update local files
-COPY updatefiles.sh /opt/updatefiles.sh
-RUN chmod a+x /opt/updatefiles.sh
+#COPY updatefiles.sh /opt/updatefiles.sh
+#RUN chmod a+x /opt/updatefiles.sh
 
 #WORKDIR /opt
 #RUN ./updatefiles.sh
