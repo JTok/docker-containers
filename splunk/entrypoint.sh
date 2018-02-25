@@ -1,5 +1,5 @@
 #!/bin/bash
-### Originally from splunk/docker-splunk
+# Originally from splunk/docker-splunk
 
 set -e
 
