@@ -5,7 +5,7 @@ By default, the 60-day enterprise free trial is installed, but this can be chang
 ## Usage
 
 ```
-docker run -d -p 8000:8000 -p 8089:8089 -p 9997:9997 -p 514:514 -v /mnt/user/appdata/splunk/var:/opt/splunk/var --name splunk jtok/splunk
+docker run -d -p 8000:8000 -p 8089:8089 -p 9997:9997 -p 514:514 -e "SPLUNK_START_ARGS=--accept-license --answer-yes" -v /mnt/user/appdata/splunk/var:/opt/splunk/var -v /mnt/user/appdata/splunk/etc:/opt/splunk/etc --name splunk jtok/splunk
 ```
 
 Once the container is running, browse to: `http://<host>:8000` to complete the setup.
@@ -17,4 +17,4 @@ Once the container is running, browse to: `http://<host>:8000` to complete the s
 * `/license` For loading an enterprise license in the app.
 
 All three volumes are optional, but to have a persistent install, you should map /opt/splunk/var.
-## This docker originally created at dmaxwell351/docker-containers
+## This docker originally created at dmaxwell351/docker-containers and splunk/docker-splunk
