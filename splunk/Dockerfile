@@ -41,7 +41,7 @@ RUN apt-get update -q \
 # sudo dependency
 RUN apt-get update -q \
   && apt-get install -y sudo \
-  && usermod -aG sudo username
+#  && usermod -aG sudo username
   && rm -rf /var/lib/apt/lists/*
 
 RUN apt-get update -q \
