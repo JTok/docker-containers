@@ -1,3 +1,5 @@
+### Originally from splunk/docker-splunk
+
 #!/bin/bash
 
 set -e
