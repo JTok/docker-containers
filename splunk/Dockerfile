@@ -22,8 +22,8 @@ RUN usermod -u 99 nobody && \
     usermod -d /home nobody && \
     chown -R nobody:users /home
 
-  ENV SPLUNK_USER nobody
-  ENV SPLUNK_GROUP users
+ENV SPLUNK_USER nobody
+ENV SPLUNK_GROUP users
 
 
 # make the "en_US.UTF-8" locale so splunk will be utf-8 enabled by default
