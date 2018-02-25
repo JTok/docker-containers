@@ -66,7 +66,7 @@ COPY updatefiles.sh /opt/updatefiles.sh
 RUN chmod a+x /opt/updatefiles.sh
 
 WORKDIR /opt
-./updatefiles.sh
+RUN ./updatefiles.sh
 
 
 EXPOSE 8000/tcp 8089/tcp 9997/tcp 514/udp
