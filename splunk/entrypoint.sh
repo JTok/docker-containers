@@ -4,6 +4,16 @@
 
 set -e
 
+
+# Set optimistic file locking in main location
+if ! grep -iq "OPTIMISTIC_ABOUT_FILE_LOCKING = 1" ${SPLUNK_HOME}/etc/splunk-launch.conf; then
+  printf "\nOPTIMISTIC_ABOUT_FILE_LOCKING = 1\n" >> ${SPLUNK_HOME}/etc/splunk-launch.conf
+fi
+# Set optimistic file locking in backup location
+if ! grep -iq "OPTIMISTIC_ABOUT_FILE_LOCKING = 1" /var/opt/splunk/etc/splunk-launch.conf; then
+  printf "\nOPTIMISTIC_ABOUT_FILE_LOCKING = 1\n" >> /var/opt/splunk/etc/splunk-launch.conf
+fi
+
 if [ "$1" = 'splunk' ]; then
   shift
   sudo -HEu ${SPLUNK_USER} ${SPLUNK_HOME}/bin/splunk "$@"
@@ -23,11 +33,6 @@ elif [ "$1" = 'start-service' ]; then
   # If these files are different override etc folder (possible that this is upgrade or first start cases)
   # Also override ownership of these files to splunk:splunk
   if ! $(cmp --silent /var/opt/splunk/etc/splunk.version ${SPLUNK_HOME}/etc/splunk.version); then
-    # Set optimistic file locking
-    if ! grep -i "OPTIMISTIC_ABOUT_FILE_LOCKING = 1" /var/opt/splunk/etc/splunk-launch.conf
-    then
-      printf "\nOPTIMISTIC_ABOUT_FILE_LOCKING = 1\n" >> /var/opt/splunk/etc/splunk-launch.conf
-    fi
     cp -fR /var/opt/splunk/etc ${SPLUNK_HOME}
     chown -R ${SPLUNK_USER}:${SPLUNK_GROUP} ${SPLUNK_HOME}/etc
     chown -R ${SPLUNK_USER}:${SPLUNK_GROUP} ${SPLUNK_HOME}/var
