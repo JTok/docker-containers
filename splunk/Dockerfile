@@ -69,7 +69,7 @@ EXPOSE 8000/tcp 8089/tcp 9997/tcp 514/udp
 
 #Run update for local files
 WORKDIR /opt/splunk
-RUN /updatefiles.sh
+RUN updatefiles.sh
 
 VOLUME ["/opt/splunk/var", "/opt/splunk/etc", "/data", "/license"]
 
