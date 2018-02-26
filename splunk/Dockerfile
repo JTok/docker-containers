@@ -18,6 +18,9 @@ ENV SPLUNK_BACKUP_DEFAULT_ETC=/var/opt/splunk
 
 ENV SPLUNK_START_ARGS="--accept-license --answer-yes --no-prompt"
 
+# Use Phusion's init system.
+CMD ["/sbin/my_init"]
+
 # Configure user nobody to match unRAID's settings
 RUN usermod -u 99 nobody && \
     usermod -g 100 nobody && \
