@@ -5,7 +5,7 @@
   <Overview>Splunk is a remote syslog server that accepts any data feed.</Overview>
   <Support>http://lime-technology.com/forum/index.php?topic=38548.0</Support>
   <Date>23/02/2018</Date>
-  <Name>splunk</Name>
+  <Name>splunk-testing</Name>
   <Description>
     [h3]splunk[/h3]
     Splunk captures, indexes, and correlates real-time data in a searchable repository from which it can generate graphs, reports, alerts, dashboards, and visualizations. Try it as your remote syslog server![br][br]
@@ -28,7 +28,7 @@
 	[font size=4]2017.04.03[/font]
 	- Updated splunk to v6.5.3
 
-  [font size=4]2018.02.23[/font]
+  	[font size=4]2018.02.23[/font]
 	- Updated splunk to v7.0.2
   </Changes>
   <Registry>https://registry.hub.docker.com/u/jtok/splunk/</Registry>
@@ -84,7 +84,6 @@
   </Data>
   <Version>7.0.2</Version>
   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
-  <ExtraParameters>-e "SPLUNK_START_ARGS=--accept-license --answer-yes"</ExtraParameters>
   <Banner>http://i.imgur.com/eddJlVg.png</Banner>
   <Icon>http://i.imgur.com/KKoQMo6.png</Icon>
 </Container>
