@@ -34,7 +34,7 @@ ENV SPLUNK_GROUP users
 # Make the "en_US.UTF-8" locale so Splunk will be utf-8 enabled by default
 RUN apt-get update -q \
   && apt-get install -y --no-install-recommends apt-utils \
-  && apt-get install -y locales
+  && apt-get install -y locales \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
   	&& localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG en_US.utf8
