@@ -8,4 +8,4 @@ fi
 if ! grep -iq "OPTIMISTIC_ABOUT_FILE_LOCKING = 1" ${SPLUNK_BACKUP_DEFAULT_ETC}/etc/splunk-launch.conf; then
   printf "\nOPTIMISTIC_ABOUT_FILE_LOCKING = 1\n" >> ${SPLUNK_BACKUP_DEFAULT_ETC}/etc/splunk-launch.conf
 fi
-exit0
+exit 0
