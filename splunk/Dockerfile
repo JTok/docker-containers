@@ -16,6 +16,8 @@ ENV SPLUNK_BUILD=03bbabbd5c0f
 ENV SPLUNK_FILENAME=splunk-${SPLUNK_VERSION}-${SPLUNK_BUILD}-Linux-x86_64.tgz
 ENV SPLUNK_BACKUP_DEFAULT_ETC=/var/opt/splunk
 
+ENV SPLUNK_START_ARGS="--accept-license --answer-yes --no-prompt"
+
 # Configure user nobody to match unRAID's settings
 RUN usermod -u 99 nobody && \
     usermod -g 100 nobody && \
