@@ -71,10 +71,9 @@ RUN mkdir -p ${SPLUNK_HOME} \
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod +x /sbin/entrypoint.sh
 
-# Set up ports
+# Set up ports for Web UI, Daemon, Indexing, and Syslog
 EXPOSE 8000/tcp 8089/tcp 9997/tcp 514/udp
 
-# Set workdir
 WORKDIR /opt/splunk
 
 VOLUME ["/opt/splunk/var", "/opt/splunk/etc", "/data", "/license"]
