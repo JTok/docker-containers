@@ -1,5 +1,5 @@
 This is a Dockerfile setup for splunk - http://www.splunk.com
-
+- ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) `#f03c15`
 ## By running this docker you accept the Splunk license agreement
 
 By default, the 60-day enterprise free trial is installed, but this can be changed to the free 500MB/day version at any time.
