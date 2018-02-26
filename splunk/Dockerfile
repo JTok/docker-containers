@@ -61,15 +61,15 @@ RUN mkdir -p ${SPLUNK_HOME} \
 COPY entrypoint.sh /sbin/entrypoint.sh
 RUN chmod +x /sbin/entrypoint.sh
 
-#Update local files
-#COPY updatefiles.sh /opt/splunk/updatefiles.sh
-#RUN chmod a+x /opt/splunk/updatefiles.sh
-
+#Copy update for local files and make executable
+COPY updatefiles.sh /opt/splunk/updatefiles.sh
+RUN chmod a+x /opt/splunk/updatefiles.sh
 
 EXPOSE 8000/tcp 8089/tcp 9997/tcp 514/udp
 
+#Run update for local files
 WORKDIR /opt/splunk
-#RUN /updatefiles.sh
+RUN /updatefiles.sh
 
 VOLUME ["/opt/splunk/var", "/opt/splunk/etc", "/data", "/license"]
 
