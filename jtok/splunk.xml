@@ -10,7 +10,7 @@
     [h3]splunk[/h3]
     Splunk captures, indexes, and correlates real-time data in a searchable repository from which it can generate graphs, reports, alerts, dashboards, and visualizations. Try it as your remote syslog server![br][br]
     [h2][span style=\'color: #E80000;\']IMPORTANT:[/span][/h2]
-    [b]-e "SPLUNK_START_ARGS=--accept-license --answer-yes"[/b] - MUST be added to the Extra Parameters box after turning on Advanced View or the container will not start.[br][br]
+    [b]By running this docker you accept the Splunk license aggreement.[/b][br][br]
     [b][span style=\'color: #E80000;\']Directions:[/span][/b][br]
     [b]/opt/splunk/var[/b] : this path is where splunk will store it\'s databases.[br]
     [b]/opt/splunk/etc[/b] : this path is where splunk will store it\'s config files.[br]
