@@ -79,6 +79,7 @@ WORKDIR /opt/splunk
 
 VOLUME ["/opt/splunk/var", "/opt/splunk/etc", "/data", "/license"]
 
+HEALTHCHECK CMD curl --fail http://localhost:8000/ || exit 1
 ENTRYPOINT ["/sbin/entrypoint.sh"]
 CMD ["start-service"]
 
