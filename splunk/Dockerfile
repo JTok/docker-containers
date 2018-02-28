@@ -30,6 +30,11 @@ RUN usermod -u 99 nobody && \
 ENV SPLUNK_USER nobody
 ENV SPLUNK_GROUP users
 
+# Install tzdata and set timezone environment variable
+RUN apt update && apt install -y tzdata \
+  && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+ENV TZ=America/Chicago
 
 # Make the "en_US.UTF-8" locale so Splunk will be utf-8 enabled by default
 RUN apt-get update -q \
