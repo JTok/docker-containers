@@ -35,7 +35,12 @@
   <Repository>jtok/splunk:testing</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
-  <Environment/>
+  <Environment>
+    <Variable>
+      <Value>America/Chicago</Value>
+      <Name>TZ</Name>
+    </Variable>
+  </Environment>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
