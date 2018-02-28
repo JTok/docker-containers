@@ -80,7 +80,7 @@ VOLUME ["/opt/splunk/var", "/opt/splunk/etc", "/data", "/license"]
 
 HEALTHCHECK CMD curl --fail http://localhost:8000/ || exit 1
 ENTRYPOINT ["/sbin/entrypoint.sh"]
-CMD ["/sbin/my_init"]
+CMD ["start-service"]
 
 ### END
 ### To make this a persistent container, you must map /opt/splunk/var and /opt/splunk/etc of this container
