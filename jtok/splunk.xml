@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <Beta>True</Beta>
+  <Beta>False</Beta>
   <Category>Network:Management</Category>
   <Overview>Splunk is a remote syslog server that accepts any data feed.</Overview>
   <Support>http://lime-technology.com/forum/index.php?topic=38548.0</Support>
