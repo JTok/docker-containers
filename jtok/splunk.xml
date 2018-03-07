@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <Beta>False</Beta>
+  <Beta>True</Beta>
   <Category>Network:Management</Category>
   <Overview>Splunk is a remote syslog server that accepts any data feed.</Overview>
   <Support>http://lime-technology.com/forum/index.php?topic=38548.0</Support>
@@ -35,7 +35,12 @@
   <Repository>jtok/splunk</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
-  <Environment/>
+  <Environment>
+    <Variable>
+      <Value>America/Chicago</Value>
+      <Name>TZ</Name>
+    </Variable>
+  </Environment>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
