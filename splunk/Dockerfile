@@ -1,4 +1,4 @@
-### Dockerfile for splunk:testing
+### Dockerfile for splunk
 ### Originally from dmaxwell351/docker-containers and splunk/docker-splunk
 FROM phusion/baseimage:0.10.0
 LABEL maintainer="jtok"
